@@ -7,12 +7,14 @@ public class ShoppingApp {
 
     public static double calcTotal(Clothing[] Manger) {
         double sum = 0;
-        for (int i = 0; i < Manger.length; i++) {
-            sum += Manger[i].getPrice();
+        for (Clothing manger : Manger) {
+            sum += manger.getPrice();
 
         }
+        System.out.println(sum + "\n");
         return sum;
     }
+
 
     public static boolean isAFit(Customer customer, Clothing clothing) {
         boolean fit;
@@ -21,17 +23,24 @@ public class ShoppingApp {
         } else {
             fit = false;
         }
+        System.out.println(fit + "\n");
         return fit;
+    }
+    public static void sortAndPrintClothingByPrice(ArrayList<Clothing> clothes) {
+        Collections.sort(clothes, new SortingComparator());
+        for (Clothing i: clothes) {
+            System.out.println(i);
+        }
     }
 
     public static void printEmployeeName(Employee employee) {
-        System.out.println(employee.getName());
+        System.out.println(employee.getName() + "\n");
 
     }
 
-    public static void printDiscAmtOff(Discountable[] discount, Clothing [] clothing) {
-        for (int x =0; x < discount.length; x++) {
-            System.out.println(clothing[x].getPrice());
+    public static void printDiscAmtOff(Discountable[] discountables, Clothing clothing) {
+        for (Discountable i: discountables) {
+            System.out.println("\n" + i.calcDiscount(clothing));
 
 
     }
