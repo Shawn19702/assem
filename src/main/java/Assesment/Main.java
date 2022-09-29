@@ -67,9 +67,8 @@ public class Main {
         System.out.println("Printing array list" + "\n" );
 
 
-        for (int i = 0; i < Clothes.size(); i++) {
-            System.out.println(Clothes.get(i) + "\n");
-
+        for (Clothing item: Clothes) {
+            System.out.println(item + "\n");
         }
 
         System.out.println("Printing employee names \n");
